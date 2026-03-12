@@ -8,7 +8,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -45,75 +46,150 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  /* Brand teal tokens */
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-mid: var(--brand-mid);
+  /* Moodboard surface & text tokens */
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface2);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-border-subtle: var(--border-subtle);
 }
 
+/* ─────────────────────────────────────────────
+   Tema claro — inversión elegante del dark.
+   Misma paleta de color, fondo claro y texto
+   oscuro derivado de las superficies del dark.
+───────────────────────────────────────────── */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* Superficies */
+  --background: oklch(0.98 0.003 264);        /* blanco con toque azul-morado sutil */
+  --foreground: oklch(0.14 0.012 264);        /* ~#08080C invertido */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.14 0.012 264);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.14 0.012 264);
+
+  /* Interactivos — teal oscurecido para contraste en fondo claro */
+  --primary: oklch(0.58 0.13 193);            /* teal medio, AA contrast sobre blanco */
+  --primary-foreground: oklch(0.98 0 0);
+
+  /* Secundario / hover backgrounds */
+  --secondary: oklch(0.93 0.006 264);         /* superficie elevada clara */
+  --secondary-foreground: oklch(0.14 0.012 264);
+
+  /* Muted */
+  --muted: oklch(0.93 0.006 264);
+  --muted-foreground: oklch(0.52 0.006 264);  /* ~45% opacidad equivalente */
+
+  /* Accent — hover sutil en claro */
+  --accent: oklch(0.93 0.006 264);
+  --accent-foreground: oklch(0.14 0.012 264);
+
+  /* Estado destructivo */
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
+
+  /* Bordes e inputs */
+  --border: oklch(0.86 0.008 264);
+  --input: oklch(0.86 0.008 264);
+  --ring: oklch(0.58 0.13 193 / 40%);
+
+  /* Radio de bordes */
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Charts — teal-anchored para coherencia con el acento del moodboard */
+  --chart-1: oklch(0.58 0.13 193);
+  --chart-2: oklch(0.50 0.11 175);
+  --chart-3: oklch(0.44 0.10 210);
+  --chart-4: oklch(0.38 0.08 235);
+  --chart-5: oklch(0.32 0.07 260);
+
+  /* Sidebar */
+  --sidebar: oklch(0.95 0.005 264);
+  --sidebar-foreground: oklch(0.14 0.012 264);
+  --sidebar-primary: oklch(0.58 0.13 193);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.93 0.006 264);
+  --sidebar-accent-foreground: oklch(0.14 0.012 264);
+  --sidebar-border: oklch(0.86 0.008 264);
+  --sidebar-ring: oklch(0.58 0.13 193 / 40%);
+
+  /* ── Tokens de marca del moodboard (tema claro) ── */
+  --brand: oklch(0.58 0.13 193);
+  --brand-soft: oklch(0.58 0.13 193 / 8%);
+  --brand-mid: oklch(0.58 0.13 193 / 20%);
+  --surface: oklch(0.96 0.004 264);
+  --surface2: oklch(0.93 0.006 264);
+  --text-muted: oklch(0.52 0.006 264);
+  --text-faint: oklch(0.68 0.004 264);
+  --border-subtle: oklch(0.86 0.008 264);
 }
 
+/* ─────────────────────────────────────────────
+   Tema oscuro — diseño principal del moodboard.
+   Monocromático oscuro con acento teal (#64DFDF).
+───────────────────────────────────────────── */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  /* Superficies — directamente del moodboard */
+  --background: #08080c;
+  --foreground: oklch(0.90 0.005 264);        /* ≈ rgba(255,255,255,0.85) */
+  --card: #0e0e14;
+  --card-foreground: oklch(0.90 0.005 264);
+  --popover: #0e0e14;
+  --popover-foreground: oklch(0.90 0.005 264);
+
+  /* Interactivos — teal del moodboard */
+  --primary: #64dfdf;
+  --primary-foreground: #08080c;
+
+  /* Secundario / hover backgrounds */
+  --secondary: #1a1a24;
+  --secondary-foreground: oklch(0.90 0.005 264);
+
+  /* Muted */
+  --muted: #0e0e14;
+  --muted-foreground: oklch(0.56 0.005 264);  /* ≈ rgba(255,255,255,0.45) */
+
+  /* Accent — hover sutil oscuro */
+  --accent: #14141c;
+  --accent-foreground: oklch(0.90 0.005 264);
+
+  /* Estado destructivo */
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+
+  /* Bordes e inputs */
+  --border: oklch(1 0 0 / 6%);               /* rgba(255,255,255,0.06) */
+  --input: oklch(1 0 0 / 8%);
+  --ring: oklch(0.84 0.11 193 / 40%);        /* accent-mid */
+
+  /* Charts — teal-anchored, alta luminosidad para contraste en dark */
+  --chart-1: oklch(0.84 0.11 193);
+  --chart-2: oklch(0.72 0.10 175);
+  --chart-3: oklch(0.64 0.09 210);
+  --chart-4: oklch(0.54 0.08 235);
+  --chart-5: oklch(0.46 0.07 260);
+
+  /* Sidebar */
+  --sidebar: #0e0e14;
+  --sidebar-foreground: oklch(0.90 0.005 264);
+  --sidebar-primary: #64dfdf;
+  --sidebar-primary-foreground: #08080c;
+  --sidebar-accent: #1a1a24;
+  --sidebar-accent-foreground: oklch(0.90 0.005 264);
+  --sidebar-border: oklch(1 0 0 / 6%);
+  --sidebar-ring: oklch(0.84 0.11 193 / 40%);
+
+  /* ── Tokens de marca del moodboard (tema oscuro) ── */
+  --brand: #64dfdf;
+  --brand-soft: rgba(100, 223, 223, 0.08);
+  --brand-mid: rgba(100, 223, 223, 0.2);
+  --surface: #0e0e14;
+  --surface2: #14141c;
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --text-faint: rgba(255, 255, 255, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
 @layer base {
