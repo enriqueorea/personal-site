@@ -1,10 +1,10 @@
-import { ComingSoon } from "@/components/coming-soon";
+import { Hero } from "@/components/hero";
 import { SmoothScroll } from "@/components/smooth-scroll";
 
 export default function Home() {
   return (
     <SmoothScroll>
-      <ComingSoon />
+      <Hero />
     </SmoothScroll>
   );
 }
